@@ -5,20 +5,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 @Entity
-@Table(name = "cliente")
-public class Clientes {
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Table(name = "factura")
+public class Factura {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String primerApellido;
-    private String segundoApellido;
-    private String email;
+    private Double importe_total;
+    private Long identificador;
 
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "clientes_id")
+    private Cliente cliente;
 }
