@@ -1,0 +1,20 @@
+<!-- crear-factura.component.html -->
+<div>
+    <h2>Crear Factura</h2>
+    <form [formGroup]="facturaForm" (ngSubmit)="onSubmit()">
+      <label>
+        Importe Total:
+        <input type="number" formControlName="importeTotal">
+      </label>
+      <label>
+        ID de Factura:
+        <input type="number" formControlName="idFactura">
+      </label>
+      <label>
+        ID de Cliente:
+        <input type="number" formControlName="clienteId">
+      </label>
+      <button type="submit">Crear Factura</button>
+    </form>
+  </div>
+  

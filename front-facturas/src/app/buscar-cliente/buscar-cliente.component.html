@@ -1,0 +1,16 @@
+
+<div>
+    <h2>Buscar Cliente</h2>
+    <input [(ngModel)]="clienteId" placeholder="Introduce el ID del cliente">
+    <button (click)="buscar()">Buscar</button>
+  
+    <div *ngIf="facturas.length > 0">
+      <h3>Facturas:</h3>
+      <ul>
+        <li *ngFor="let factura of facturas">
+          ID de Factura: {{factura.idFactura}}, Importe Total: {{factura.importeTotal}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
